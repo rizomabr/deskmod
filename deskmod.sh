@@ -50,9 +50,9 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up []
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu []
-gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>r']
-gsettings set org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
-gsettings set org.gnome.desktop.wm.keybindings switch-applications ['<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "['<Super>r']"
+gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward []
 gsettings set org.gnome.desktop.wm.keybindings switch-group []
 gsettings set org.gnome.desktop.wm.keybindings switch-group-backward []
@@ -91,7 +91,7 @@ tar -xf arc-solid.tar.xz -C .temp
 sudo rm -r /usr/share/themes/Arc-Dark-solid
 sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
-sudo wget -O panel.ini https://raw.githubusercontent.com/rizomabr/deskmod/master/panel.ini?token=AEZJI3CSNUDFEK2LGANABIS4XLBLA /usr/share/budgie-desktop/
+sudo wget -O panel.ini https://raw.githubusercontent.com/rizomabr/deskmod/master/panel.ini /usr/share/budgie-desktop/
 budgie-panel --replace &
 
 # install proprietary drivers
