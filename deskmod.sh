@@ -16,7 +16,8 @@ tar -xf arc-solid.tar.xz -C .temp
 sudo rm -r /usr/share/themes/Arc-Dark-solid
 sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
-sudo wget
+sudo wget -O panel.ini https://raw.githubusercontent.com/rizomabr/deskmod/master/panel.ini?token=AEZJI3CSNUDFEK2LGANABIS4XLBLA /usr/share/budgie-desktop/
+budgie-panel --replace &
 
 # ms-fonts
 sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
