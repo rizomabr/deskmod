@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# turn output on (echo)
+set -x
+
 # upgrade
 sudo eopkg upgrade -y
 
