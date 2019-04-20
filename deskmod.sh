@@ -4,10 +4,10 @@
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove eog hexchat gnome-calendar gnome-mpv thunderbird transmission
+sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install dropbox gnome-tweaks hunspell-pt-br paper-icon-theme steam vlc
+sudo eopkg install -y dropbox gnome-tweaks hunspell-pt-br paper-icon-theme steam vlc
 
 # ms-fonts
 sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
