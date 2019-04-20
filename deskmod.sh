@@ -9,6 +9,16 @@ sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmissi
 # install packages
 sudo eopkg install -y dropbox hunspell-pt-br paper-icon-theme steam vlc
 
+# install arc-solid-gtk-theme / deskmod settings
+wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
+mkdir .temp
+tar -xf arc-solid.tar.xz -C .temp
+sudo rm -r /usr/share/themes/Arc-Dark-solid
+sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
+rm -r .temp && rm arc-solid.tar.xz
+sudo wget -O panel.ini https://raw.githubusercontent.com/rizomabr/deskmod/master/panel.ini /usr/share/budgie-desktop/
+budgie-panel --replace &
+
 # ms-fonts
 sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
 sudo eopkg it mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
@@ -83,16 +93,6 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 
 # slick-greeter
 gsettings set x.dm.slick-greeter activate-numlock true
-
-# install arc-solid-gtk-theme / deskmod settings
-wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
-mkdir .temp
-tar -xf arc-solid.tar.xz -C .temp
-sudo rm -r /usr/share/themes/Arc-Dark-solid
-sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
-rm -r .temp && rm arc-solid.tar.xz
-sudo wget -O panel.ini https://raw.githubusercontent.com/rizomabr/deskmod/master/panel.ini /usr/share/budgie-desktop/
-budgie-panel --replace &
 
 # install proprietary drivers
 doflicky-ui
