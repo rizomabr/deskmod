@@ -24,10 +24,9 @@ budgie-panel --reset --replace &
 
 # ms-fonts
 sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
-sudo eopkg it mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
+sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
 # general
-gsettings set ca.desrt.dconf-editor.Settings show-warning false
 gsettings set com.solus-project.budgie-raven show-power-strip true
 gsettings set com.solus-project.software-center check-updates false
 gsettings set com.solus-project.software-center fetch-media false
