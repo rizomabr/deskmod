@@ -10,15 +10,18 @@ sudo eopkg upgrade -y
 sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install -y dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
+sudo eopkg install -y adapta-gtk-theme deluge dropbox gimp hunspell-pt-br paper-icon-theme skype steam vlc
 
 # install arc-solid-gtk-theme / deskmod settings
-wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
-mkdir .temp
-tar -xf arc-solid.tar.xz -C .temp
-sudo rm -r /usr/share/themes/Arc-Dark-solid
-sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
-rm -r .temp && rm arc-solid.tar.xz
+# wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
+# mkdir .temp
+# tar -xf arc-solid.tar.xz -C .temp
+# sudo rm -r /usr/share/themes/Arc-Dark-solid
+# sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
+# rm -r .temp && rm arc-solid.tar.xz
+
+# custom budgie-panel
+gsettings com.solus-project.budgie-panel.panels.{d4fe5968-63bc-11e9-8fb8-988389db1ad5}.size 49
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/deskmod.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
 budgie-panel --reset --replace &
 
@@ -35,7 +38,7 @@ gsettings set com.solus-project.software-center update-frequency 'weekly'
 # desktop preferences
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark-solid'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adapta-Nokto'
 gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
