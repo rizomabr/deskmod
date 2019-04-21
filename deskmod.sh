@@ -97,4 +97,5 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 gsettings set x.dm.slick-greeter activate-numlock true
 
 # install proprietary drivers
+dropbox start -i
 doflicky-ui
