@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y breeze-cursor-theme deluge dropbox mint-meta-codecs nemo-dropbox skypeforlinux steam tlp tlp-rdw
 
 # remove bloatware
-sudo apt purge --auto-remove -y gnome-calendar hexchat mintwelcome onboard pix thunderbird timeshift transmission tomboy
+sudo apt purge --auto-remove -y gnome-calendar hexchat onboard pix thunderbird timeshift transmission-gtk tomboy
 
 # install paper-icon-theme
 sudo add-apt-repository ppa:snwh/ppa
