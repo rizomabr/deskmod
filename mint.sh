@@ -7,7 +7,7 @@ set -x
 sudo apt update && sudo apt upgrade -y
 
 # install packages
-sudo apt install -y breeze-cursor-theme deluge dropbox mint-meta-codecs nemo-dropbox skype steam tlp tlp-rdw
+sudo apt install -y breeze-cursor-theme deluge dropbox mint-meta-codecs nemo-dropbox skypeforlinux steam tlp tlp-rdw
 
 # remove bloatware
 sudo apt purge --auto-remove -y gnome-calendar hexchat mintwelcome onboard pix thunderbird timeshift transmission tomboy
