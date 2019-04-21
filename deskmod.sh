@@ -10,7 +10,7 @@ sudo eopkg upgrade -y
 sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install -y dropbox hunspell-pt-br paper-icon-theme steam vlc
+sudo eopkg install -y dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
 
 # install arc-solid-gtk-theme / deskmod settings
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
