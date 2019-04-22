@@ -6,11 +6,14 @@ set -x
 # update
 sudo dnf update -y
 
+# enable rpmfusion
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 # install packages
-sudo dnf install 
+sudo dnf install -y
 
 # remove bloats
-sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-themes-extra gnome-weather orca totem
+sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-weather orca totem
 
 # remove useless gnome-shell-extensions
 sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-plances-menu gnome-shell-extension-window-list
