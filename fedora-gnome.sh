@@ -34,7 +34,7 @@ sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-l
 sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
 sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.jpg'
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.png'
 
 # show desktop icons
 gsettings set org.gnome.desktop.background show-desktop-icons true
