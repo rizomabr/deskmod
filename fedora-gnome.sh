@@ -9,6 +9,12 @@ sudo dnf update -y
 # install packages
 sudo dnf install 
 
+# remove bloats
+sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-themes-extra gnome-weather orca totem
+
+# remove useless gnome-shell-extensions
+sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-plances-menu gnome-shell-extension-window-list
+
 # background
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/f29/default/f29.xml'
 
