@@ -3,6 +3,9 @@
 # turn output on (echo)
 set -x
 
+# Extend script time as super user
+sudo sed -i -e "s/env_reset/env_reset,timestamp_timeout=-1/g" /etc/sudoers
+
 # update
 sudo dnf update -y
 
@@ -18,11 +21,11 @@ sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-
 # remove useless gnome-shell-extensions
 sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-plances-menu gnome-shell-extension-window-list
 
-# background
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/f29/default/f29.xml'
-
-# screensaver
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/f29/default/f29.xml'
+# background / screensaver
+sudo cp ./img/Wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
+sudo cp ./img/Login.png /usr/share/backgrounds/screensaver.png
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.jpg'
 
 # show desktop icons
 gsettings set org.gnome.desktop.background show-desktop-icons true
@@ -138,3 +141,18 @@ gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+
+# Redshift
+cp ./conf/redshift.conf ${HOME}/.config/redshift.conf
+
+# Run Dropbox and Redshift
+dropbox start -i &>/dev/null & redshift-gtk &>/dev/null &
+
+# Autostart
+mkdir ${HOME}/.config/autostart/
+rm ${HOME}/.config/autostart/liveinst-setup.desktop
+rm ${HOME}/.config/autostart/orca-autostart.desktop
+cp ./conf/redshift-gtk.desktop ${HOME}/.config/autostart/redshift-gtk.desktop
+cp ./conf/dropbox.desktop ${HOME}/.config/autostart/dropbox.desktop
+chmod +x ${HOME}/.config/autostart/dropbox.desktop
+chmod +x ${HOME}/.config/autostart/redshift-gtk.desktop
