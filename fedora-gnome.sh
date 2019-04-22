@@ -6,25 +6,34 @@ set -x
 # Extend script time as super user
 sudo sed -i -e "s/env_reset/env_reset,timestamp_timeout=-1/g" /etc/sudoers
 
-# update
-sudo dnf update -y
-
 # enable rpmfusion
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$(rpm -E %fedora) /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)
+
+# install skype
+sudo dnf config-manager --add-repo https://repo.skype.com/data/skype-stable.repo
+sudo rpm --import https://repo.skype.com/data/SKYPE-GPG-KEY
+
+# update repos
+sudo dnf update -y
 
 # install packages
-sudo dnf install -y
+sudo dnf groupinstall -y Multimedia
+sudo dnf install -y cabextract deluge discord dropbox gimp gnome-tweaks libreoffice nautilus-dropbox skypeforlinux steam
+
+# install ms-fonts
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # remove bloats
-sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-weather orca totem
+sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-weather orca
 
 # remove useless gnome-shell-extensions
 sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-plances-menu gnome-shell-extension-window-list
 
 # background / screensaver
-sudo cp ./img/Wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
-sudo cp ./img/Login.png /usr/share/backgrounds/screensaver.png
+sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.jpg'
 
 # show desktop icons
@@ -38,7 +47,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
 
-# touchpad click method  tap to click
+# touchpad click method / tap to click
 gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 
@@ -142,17 +151,5 @@ gsettings set org.gnome.nautilus.preferences show-hidden-files true
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
-# Redshift
-cp ./conf/redshift.conf ${HOME}/.config/redshift.conf
-
-# Run Dropbox and Redshift
-dropbox start -i &>/dev/null & redshift-gtk &>/dev/null &
-
-# Autostart
-mkdir ${HOME}/.config/autostart/
-rm ${HOME}/.config/autostart/liveinst-setup.desktop
-rm ${HOME}/.config/autostart/orca-autostart.desktop
-cp ./conf/redshift-gtk.desktop ${HOME}/.config/autostart/redshift-gtk.desktop
-cp ./conf/dropbox.desktop ${HOME}/.config/autostart/dropbox.desktop
-chmod +x ${HOME}/.config/autostart/dropbox.desktop
-chmod +x ${HOME}/.config/autostart/redshift-gtk.desktop
+# Run Dropbox
+dropbox start -i &>/dev/null &
