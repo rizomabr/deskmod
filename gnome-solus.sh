@@ -14,10 +14,10 @@ sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmissi
 sudo eopkg install -y deluge dropbox gimp hunspell-pt-br paper-icon-theme skype steam vlc
 
 # install third-party
-sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
-sudo eopkg it skype*.eopkg;sudo rm *.eopkg
-sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
-sudo eopkg it mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
+sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
+sudo eopkg install -y skype*.eopkg;sudo rm *.eopkg
+sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
+sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
 # install arc-solid-gtk-theme / deskmod settings
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
