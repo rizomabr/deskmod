@@ -4,7 +4,7 @@
 set -x
 
 # remove sudo timeout
-sudo sed -i -e "s+#includedir /etc/sudoers.d+#includedir /etc/sudoers.d\n\nDefaults  env_reset,timestamp_timeout=1+g" /etc/sudoers
+sudo sed -i -e "s+#includedir /etc/sudoers.d+#includedir /etc/sudoers.d\n\nDefaults  env_reset,timestamp_timeout=-1+g" /etc/sudoers
 
 # upgrade
 sudo eopkg upgrade -y
