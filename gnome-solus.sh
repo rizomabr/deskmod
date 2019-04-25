@@ -211,8 +211,9 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
-gnome-shell-extension-installer 1160
-gnome-shell-extension-installer 1228
+sudo gnome-shell-extension-installer 1160
+sudo gnome-shell-extension-installer 1228
+gnome-shell-extension-tool -e dash-to-panel arc-menu
 gsettings set org.gnome.shell enabled-extensions ['impatience@gfxmonk.net', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com']
 gsettings --schemadir /usr/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
