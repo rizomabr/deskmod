@@ -239,6 +239,7 @@ sudo gnome-shell-extension-installer 1160
 sudo gnome-shell-extension-installer 1228
 gnome-shell-extension-tool -e dash-to-panel
 gnome-shell-extension-tool -e arc-menu
+gnome-shell-extension-tool -e alternate-tab
 gsettings --schemadir /usr/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-padding 8
