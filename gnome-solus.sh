@@ -211,6 +211,30 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
+gnome-shell-extension-tool -d apps-menu
+gnome-shell-extension-tool -d auto-move-windows
+gnome-shell-extension-tool -d dash-to-dock
+gnome-shell-extension-tool -d example
+gnome-shell-extension-tool -d launch-new-instance
+gnome-shell-extension-tool -d native-window-placement
+gnome-shell-extension-tool -d Onboard_Indicator
+gnome-shell-extension-tool -d places-menu
+gnome-shell-extension-tool -d screenshot-window-sizer
+gnome-shell-extension-tool -d window-list
+gnome-shell-extension-tool -d windowsNavigator
+gnome-shell-extension-tool -d workspace-indicator
+sudo rm -rf /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
+sudo rm -rf /usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/Onboard_Indicator@onboard.org
+sudo rm -rf /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com
 sudo gnome-shell-extension-installer 1160
 sudo gnome-shell-extension-installer 1228
 gnome-shell-extension-tool -e dash-to-panel
