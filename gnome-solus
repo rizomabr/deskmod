@@ -34,178 +34,177 @@ sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.png'
 
 # reset ibus hotkeys
-org.freedesktop.ibus.general.hotkey next-engine []
-org.freedesktop.ibus.general.hotkey next-engine-in-menu []
-org.freedesktop.ibus.general.hotkey trigger []
-org.freedesktop.ibus.general.hotkey triggers []
-org.freedesktop.ibus.panel.emoji hotkey []
-org.freedesktop.ibus.panel.emoji unicode-hotkey []
+gsettings set org.freedesktop.ibus.general.hotkey next-engine []
+gsettings set org.freedesktop.ibus.general.hotkey next-engine-in-menu []
+gsettings set org.freedesktop.ibus.general.hotkey trigger []
+gsettings set org.freedesktop.ibus.general.hotkey triggers []
+gsettings set org.freedesktop.ibus.panel.emoji hotkey []
+gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
 
 # desktop
-org.gnome.desktop.background show-desktop-icons true
+gsettings set org.gnome.desktop.background show-desktop-icons true
 
 # interface
-org.gnome.desktop.interface clock-show-date true
-org.gnome.desktop.interface gtk-theme 'Plata-Noir'
-org.gnome.desktop.interface icon-theme 'Papirus'
-org.gnome.desktop.interface menubar-accel ''
+gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.interface gtk-theme 'Plata-Noir'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+gsettings set org.gnome.desktop.interface menubar-accel ''
 
 # sound
-org.gnome.desktop.sound allow-volume-above-100-percent false
+gsettings set org.gnome.desktop.sound allow-volume-above-100-percent false
 
 # custom wm keybindings
-org.gnome.desktop.wm.keybindings activate-window-menu []
-org.gnome.desktop.wm.keybindings begin-move []
-org.gnome.desktop.wm.keybindings begin-resize []
-org.gnome.desktop.wm.keybindings cycle-group []
-org.gnome.desktop.wm.keybindings cycle-group-backward []
-org.gnome.desktop.wm.keybindings cycle-panels []
-org.gnome.desktop.wm.keybindings cycle-panels-backward []
-org.gnome.desktop.wm.keybindings cycle-windows []
-org.gnome.desktop.wm.keybindings cycle-windows-backward []
-org.gnome.desktop.wm.keybindings minimize []
-org.gnome.desktop.wm.keybindings move-to-monitor-down []
-org.gnome.desktop.wm.keybindings move-to-monitor-left []
-org.gnome.desktop.wm.keybindings move-to-monitor-right []
-org.gnome.desktop.wm.keybindings move-to-monitor-up []
-org.gnome.desktop.wm.keybindings move-to-workspace-1 []
-org.gnome.desktop.wm.keybindings move-to-workspace-down []
-org.gnome.desktop.wm.keybindings move-to-workspace-last []
-org.gnome.desktop.wm.keybindings move-to-workspace-left []
-org.gnome.desktop.wm.keybindings move-to-workspace-right []
-org.gnome.desktop.wm.keybindings move-to-workspace-up []
-org.gnome.desktop.wm.keybindings panel-main-menu []
-org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>r']
-org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
-org.gnome.desktop.wm.keybindings switch-applications ['<Alt>Tab']
-org.gnome.desktop.wm.keybindings switch-applications-backward []
-org.gnome.desktop.wm.keybindings switch-group []
-org.gnome.desktop.wm.keybindings switch-group-backward []
-org.gnome.desktop.wm.keybindings switch-input-source []
-org.gnome.desktop.wm.keybindings switch-input-source-backward []
-org.gnome.desktop.wm.keybindings switch-panels []
-org.gnome.desktop.wm.keybindings switch-panels-backward []
-org.gnome.desktop.wm.keybindings switch-to-workspace-1 []
-org.gnome.desktop.wm.keybindings switch-to-workspace-down []
-org.gnome.desktop.wm.keybindings switch-to-workspace-last []
-org.gnome.desktop.wm.keybindings switch-to-workspace-left []
-org.gnome.desktop.wm.keybindings switch-to-workspace-right []
-org.gnome.desktop.wm.keybindings switch-to-workspace-up []
-org.gnome.desktop.wm.keybindings toggle-maximized []
-org.gnome.desktop.wm.keybindings unmaximize []
-org.gnome.desktop.wm.preferences num-workspaces 1
-org.gnome.desktop.wm.preferences theme 'Plata-Noir'
+gsettings set org.gnome.desktop.wm.keybindings activate-window-menu []
+gsettings set org.gnome.desktop.wm.keybindings begin-move []
+gsettings set org.gnome.desktop.wm.keybindings begin-resize []
+gsettings set org.gnome.desktop.wm.keybindings cycle-group []
+gsettings set org.gnome.desktop.wm.keybindings cycle-group-backward []
+gsettings set org.gnome.desktop.wm.keybindings cycle-panels []
+gsettings set org.gnome.desktop.wm.keybindings cycle-panels-backward []
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows []
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows-backward []
+gsettings set org.gnome.desktop.wm.keybindings minimize []
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down []
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left []
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right []
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-last []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings panel-main-menu []
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>r']
+gsettings set org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
+gsettings set org.gnome.desktop.wm.keybindings switch-applications ['<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward []
+gsettings set org.gnome.desktop.wm.keybindings switch-group []
+gsettings set org.gnome.desktop.wm.keybindings switch-group-backward []
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source []
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
+gsettings set org.gnome.desktop.wm.keybindings switch-panels []
+gsettings set org.gnome.desktop.wm.keybindings switch-panels-backward []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-last []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized []
+gsettings set org.gnome.desktop.wm.keybindings unmaximize []
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
+gsettings set org.gnome.desktop.wm.preferences theme 'Plata-Noir'
 
 # file-roller
-org.gnome.FileRoller.Dialogs.New default-extension '.zip'
-org.gnome.FileRoller.FileSelector show-hidden true
+gsettings set org.gnome.FileRoller.Dialogs.New default-extension '.zip'
+gsettings set org.gnome.FileRoller.FileSelector show-hidden true
 
 # gedit
-org.gnome.gedit.plugins active-plugins []
-org.gnome.gedit.preferences.editor display-line-numbers true
+gsettings set org.gnome.gedit.plugins active-plugins []
+gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 
 # login screen
-org.gnome.login-screen enable-fingerprint-authentication false
-org.gnome.login-screen enable-smartcard-authentication false
+gsettings set org.gnome.login-screen enable-fingerprint-authentication false
+gsettings set org.gnome.login-screen enable-smartcard-authentication false
 
 # mutter
-org.gnome.mutter.keybindings rotate-monitor []
-org.gnome.mutter.wayland.keybindings restore-shortcuts ['<Super>Escape']
-org.gnome.mutter.wayland.keybindings switch-to-session-1 []
-org.gnome.mutter.wayland.keybindings switch-to-session-2 []
-org.gnome.mutter.wayland.keybindings switch-to-session-3 []
-org.gnome.mutter.wayland.keybindings switch-to-session-4 []
-org.gnome.mutter.wayland.keybindings switch-to-session-5 []
-org.gnome.mutter.wayland.keybindings switch-to-session-6 []
-org.gnome.mutter.wayland.keybindings switch-to-session-7 []
-org.gnome.mutter.wayland.keybindings switch-to-session-8 []
-org.gnome.mutter.wayland.keybindings switch-to-session-9 []
-org.gnome.mutter.wayland.keybindings switch-to-session-10 []
-org.gnome.mutter.wayland.keybindings switch-to-session-11 []
-org.gnome.mutter.wayland.keybindings switch-to-session-12 []
+gsettings set org.gnome.mutter.keybindings rotate-monitor []
+gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts ['<Super>Escape']
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-2 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-3 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-4 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-5 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-6 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-7 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-8 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-9 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-10 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-11 []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-12 []
 
 # nautilus
-org.gnome.nautilus.desktop home-icon-name 'Computador'
-org.gnome.nautilus.desktop network-icon-name 'Rede'
-org.gnome.nautilus.desktop network-icon-visible true
-org.gnome.nautilus.desktop trash-icon-name 'Lixeira'
-org.gnome.nautilus.preferences click-policy 'double'
-org.gnome.nautilus.preferences default-folder-viewer 'list-view'
-org.gnome.nautilus.preferences show-hidden-files true
+gsettings set org.gnome.nautilus.desktop home-icon-name 'Computador'
+gsettings set org.gnome.nautilus.desktop network-icon-name 'Rede'
+gsettings set org.gnome.nautilus.desktop network-icon-visible true
+gsettings set org.gnome.nautilus.desktop trash-icon-name 'Lixeira'
+gsettings set org.gnome.nautilus.preferences click-policy 'double'
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
 
 # settings-daemon
-org.gnome.settings-daemon.peripherals.keyboard numlock-state 'on'
-org.gnome.settings-daemon.plugins.media-keys area-screenshot ''
-org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip ''
-org.gnome.settings-daemon.plugins.media-keys calculator ''
-org.gnome.settings-daemon.plugins.media-keys control-center ''
-org.gnome.settings-daemon.plugins.media-keys eject ''
-org.gnome.settings-daemon.plugins.media-keys email ''
-org.gnome.settings-daemon.plugins.media-keys home '<Super>e'
-org.gnome.settings-daemon.plugins.media-keys logout '<Control><Alt>Delete'
-org.gnome.settings-daemon.plugins.media-keys magnifier ''
-org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-in ''
-org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-out ''
-org.gnome.settings-daemon.plugins.media-keys media ''
-org.gnome.settings-daemon.plugins.media-keys next ''
-org.gnome.settings-daemon.plugins.media-keys pause ''
-org.gnome.settings-daemon.plugins.media-keys play ''
-org.gnome.settings-daemon.plugins.media-keys previous ''
-org.gnome.settings-daemon.plugins.media-keys screencast ''
-org.gnome.settings-daemon.plugins.media-keys screenreader ''
-org.gnome.settings-daemon.plugins.media-keys screenshot-clip ''
-org.gnome.settings-daemon.plugins.media-keys search ''
-org.gnome.settings-daemon.plugins.media-keys stop ''
-org.gnome.settings-daemon.plugins.media-keys window-screenshot ''
-org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip ''
-org.gnome.settings-daemon.plugins.media-keys www ''
+gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state 'on'
+gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys calculator ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys control-center ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys eject ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys email ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys home '<Super>e'
+gsettings set org.gnome.settings-daemon.plugins.media-keys logout '<Control><Alt>Delete'
+gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-in ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-out ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys media ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys next ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys pause ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys play ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys previous ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys screencast ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys screenreader ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys search ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys stop ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip ''
+gsettings set org.gnome.settings-daemon.plugins.media-keys www ''
 
 # shell
-org.gnome.shell enabled-extensions ['impatience@gfxmonk.net', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com']
-org.gnome.shell favorite-apps []
-org.gnome.shell.extensions.net.gfxmonk.impatience speed-factor 0.5
-org.gnome.shell.extensions.user-theme name 'Plata-Noir'
-
-org.gnome.shell.keybindings focus-active-notification []
-org.gnome.shell.keybindings open-application-menu []
-org.gnome.shell.keybindings toggle-application-view []
-org.gnome.shell.keybindings toggle-message-tray []
-org.gnome.shell.keybindings toggle-overview []
-org.gnome.shell.overrides dynamic-workspaces false
+gsettings set org.gnome.shell enabled-extensions ['impatience@gfxmonk.net', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com']
+gsettings set org.gnome.shell favorite-apps []
+gsettings set org.gnome.shell.extensions.net.gfxmonk.impatience speed-factor 0.5
+gsettings set org.gnome.shell.extensions.user-theme name 'Plata-Noir'
+gsettings set org.gnome.shell.keybindings focus-active-notification []
+gsettings set org.gnome.shell.keybindings open-application-menu []
+gsettings set org.gnome.shell.keybindings toggle-application-view []
+gsettings set org.gnome.shell.keybindings toggle-message-tray []
+gsettings set org.gnome.shell.keybindings toggle-overview []
+gsettings set org.gnome.shell.overrides dynamic-workspaces false
 
 # terminal
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-window 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ copy 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-clear 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-next 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-previous 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ full-screen 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-left 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-right 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-window 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ paste 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-1 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-2 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-3 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-4 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-5 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-6 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-7 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-9 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-10 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-in 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-normal 'disabled'
-org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-out 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-window 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ copy 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-clear 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-next 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-previous 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ full-screen 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-left 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-right 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-window 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ paste 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-1 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-2 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-3 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-4 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-5 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-6 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-7 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-9 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-10 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-in 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-normal 'disabled'
+gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-out 'disabled'
 
 # gtk
-org.gtk.Settings.FileChooser date-format 'with-time'
-org.gtk.Settings.FileChooser show-hidden true
+gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
+gsettings set org.gtk.Settings.FileChooser show-hidden true
 
 # install proprietary drivers
 dropbox start -i
