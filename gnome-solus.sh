@@ -224,8 +224,6 @@ gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.g
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel show-favorites false
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel show-show-apps-button false
 gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button true
-gnome-shell-extension-instaler --restart-shell
-
 
 # install proprietary drivers
 dropbox start -i
