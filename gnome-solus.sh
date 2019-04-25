@@ -29,6 +29,58 @@ sudo rm -r /usr/share/themes/Arc-Dark-solid
 sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
 
+# extensions
+wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
+chmod +x gnome-shell-extension-installer
+sudo mv gnome-shell-extension-installer /usr/bin/
+gnome-shell-extension-tool -d alternate-tab
+gnome-shell-extension-tool -d apps-menu
+gnome-shell-extension-tool -d auto-move-windows
+gnome-shell-extension-tool -d dash-to-dock
+gnome-shell-extension-tool -d example
+gnome-shell-extension-tool -d launch-new-instance
+gnome-shell-extension-tool -d native-window-placement
+gnome-shell-extension-tool -d Onboard_Indicator
+gnome-shell-extension-tool -d places-menu
+gnome-shell-extension-tool -d screenshot-window-sizer
+gnome-shell-extension-tool -d window-list
+gnome-shell-extension-tool -d windowsNavigator
+gnome-shell-extension-tool -d workspace-indicator
+sudo rm -rf /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
+sudo rm -rf /usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/Onboard_Indicator@onboard.org
+sudo rm -rf /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
+sudo rm -rf /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com
+gnome-shell-extension-installer 1160
+gnome-shell-extension-installer 1228
+gnome-shell-extension-tool -e dash-to-panel
+gnome-shell-extension-tool -e arc-menu
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu disable-activities-hotcorner true
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Icon'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-icon 'System_Icon'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-padding 8
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel dot-size 0
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel focus-highlight true
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-size 13
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel location-clock 'STATUSRIGHT'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel multi-monitors false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel panel-size 32
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-activities-button false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-favorites false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-showdesktop-button false
+
 # background / screensaver
 sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
@@ -47,6 +99,7 @@ gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
 gsettings set org.gnome.desktop.background show-desktop-icons true
 
 # interface
+gsettings set org.gnome.desktop.datetime automatic-timezone true
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark-solid'
 gsettings set org.gnome.desktop.interface icon-theme 'Paper'
@@ -113,7 +166,7 @@ gsettings set org.gnome.login-screen enable-smartcard-authentication false
 
 # mutter
 gsettings set org.gnome.mutter.keybindings rotate-monitor []
-gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts '["<Super>Escape"]'
+gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-2 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-3 []
@@ -208,56 +261,6 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-
-# extensions
-wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
-chmod +x gnome-shell-extension-installer
-sudo mv gnome-shell-extension-installer /usr/bin/
-gnome-shell-extension-tool -d alternate-tab
-gnome-shell-extension-tool -d apps-menu
-gnome-shell-extension-tool -d auto-move-windows
-gnome-shell-extension-tool -d dash-to-dock
-gnome-shell-extension-tool -d example
-gnome-shell-extension-tool -d launch-new-instance
-gnome-shell-extension-tool -d native-window-placement
-gnome-shell-extension-tool -d Onboard_Indicator
-gnome-shell-extension-tool -d places-menu
-gnome-shell-extension-tool -d screenshot-window-sizer
-gnome-shell-extension-tool -d window-list
-gnome-shell-extension-tool -d windowsNavigator
-gnome-shell-extension-tool -d workspace-indicator
-sudo rm -rf /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
-sudo rm -rf /usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/Onboard_Indicator@onboard.org
-sudo rm -rf /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
-sudo rm -rf /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com
-gnome-shell-extension-installer 1160
-gnome-shell-extension-installer 1228
-gnome-shell-extension-tool -e dash-to-panel
-gnome-shell-extension-tool -e arc-menu
-gnome-shell-extension-tool -e alternate-tab
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-padding 8
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel dot-size 0
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel focus-highlight true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-size 13
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel location-clock 'STATUSRIGHT'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel multi-monitors false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel panel-size 32
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-activities-button false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-favorites false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-showdesktop-button false
 
 # install proprietary drivers
 dropbox start -i
