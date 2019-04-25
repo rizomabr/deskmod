@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # turn output on (echo)
@@ -11,7 +10,7 @@ sudo eopkg upgrade -y
 sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install -y deluge dropbox gimp hunspell-pt-br paper-icon-theme skype steam vlc
+sudo eopkg install -y deluge dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
 
 # install third-party
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
@@ -46,8 +45,8 @@ gsettings set org.gnome.desktop.background show-desktop-icons true
 
 # interface
 gsettings set org.gnome.desktop.interface clock-show-date true
-gsettings set org.gnome.desktop.interface gtk-theme 'Plata-Noir'
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark-solid'
+gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 gsettings set org.gnome.desktop.interface menubar-accel ''
 
 # sound
@@ -75,9 +74,9 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up []
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu []
-gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog ['<Super>r']
-gsettings set org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
-gsettings set org.gnome.desktop.wm.keybindings switch-applications ['<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog '["<Super>r"]'
+gsettings set org.gnome.desktop.wm.keybindings show-desktop '["<Super>d"]'
+gsettings set org.gnome.desktop.wm.keybindings switch-applications '["<Alt>Tab"]'
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward []
 gsettings set org.gnome.desktop.wm.keybindings switch-group []
 gsettings set org.gnome.desktop.wm.keybindings switch-group-backward []
@@ -110,7 +109,7 @@ gsettings set org.gnome.login-screen enable-smartcard-authentication false
 
 # mutter
 gsettings set org.gnome.mutter.keybindings rotate-monitor []
-gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts ['<Super>Escape']
+gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts '["<Super>Escape"]'
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-2 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-3 []
@@ -161,10 +160,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-cli
 gsettings set org.gnome.settings-daemon.plugins.media-keys www ''
 
 # shell
-gsettings set org.gnome.shell enabled-extensions ['impatience@gfxmonk.net', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com']
 gsettings set org.gnome.shell favorite-apps []
 gsettings set org.gnome.shell.extensions.net.gfxmonk.impatience speed-factor 0.5
-gsettings set org.gnome.shell.extensions.user-theme name 'Plata-Noir'
+gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'
 gsettings set org.gnome.shell.keybindings focus-active-notification []
 gsettings set org.gnome.shell.keybindings open-application-menu []
 gsettings set org.gnome.shell.keybindings toggle-application-view []
@@ -205,6 +203,29 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 # gtk
 gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
+
+# extensions
+wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
+chmod +x gnome-shell-extension-installer
+sudo mv gnome-shell-extension-installer /usr/bin/
+gnome-shell-extension-installer 1160
+gnome-shell-extension-installer 1228
+gsettings set org.gnome.shell enabled-extensions ['impatience@gfxmonk.net', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com']
+gsettings --schemadir /usr/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel appicon-padding 8
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel focus-highlight true
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel group-apps false
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel group-apps-label-font-size 13
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel location-clock 'STATUSRIGHT'
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel multi-monitors false
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel panel-size 32
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel show-activities-button false
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel show-favorites false
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org/gnome/shell/extensions/dash-to-panel show-show-apps-button false
+gsettings --schemadir /usr/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button true
+gnome-shell-extension-instaler --restart-shell
+
 
 # install proprietary drivers
 dropbox start -i
