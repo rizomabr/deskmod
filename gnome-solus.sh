@@ -262,9 +262,9 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 # conky
-mkdir ${HOME}/.conky/Default
-cp ./cfg/conky-startup.sh ${HOME}/.conky/conky-startup.sh
-mkdir ${HOME}/.config/autostart/
+mkdir -p ${HOME}/.conky/Default
+cp ./cfg/.conkyrc ${HOME}/.conky/.conkyrc
+mkdir -p ${HOME}/.config/autostart/
 cp ./cfg/conky-startup.sh ${HOME}/.config/autostart/conky-startup.sh
 chmod +x ${HOME}/.config/autostart/conky-startup.sh
 
