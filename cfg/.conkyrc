@@ -1,35 +1,33 @@
-conky.config={
-background=yes
-use_xft=yes
-xftfont=FreeSans:bold:size=9
-xftalpha=1
-update_interval=1.0
-total_run_times=0
-own_window=yes
-own_window_transparent=yes
-own_window_type=desktop
-own_window_hints=undecorated,below,sticky,skip_taskbar,skip_pager
-double_buffer=yes
-minimum_size=250
-maximum_width 250
-draw_shades=yes
-draw_outline=no
-draw_borders=no
-draw_graph_borders=yes
-default_color=white
-default_shade_color=black
-default_outline_color=white
-alignment=top_right
-gap_x=10
-gap_y=0
-no_buffers=yes
-uppercase=no
-cpu_avg_samples=2
-override_utf8_locale=yes
-own_window_argb_value=0
-own_window_argb_visual=yes
-own_window_colour=000000
+conky.config = {
+alignment = 'top_right',
+background = false,
+cpu_avg_samples = 2,
+default_color = 'white',
+default_outline_color = 'white',
+default_shade_color = 'black',
+double_buffer = false,
+draw_borders = false,
+draw_graph_borders = true,
+draw_outline = false,
+draw_shades = false,
+font = 'FreeSans:bold:size=9',
+gap_x = 10,
+gap_y = 0,
+maximum_width = 250,
+minimum_width = 250,
+minimum_height = 250,
+no_buffers = true,
+override_utf8_locale = true,
+own_window = true,
+own_window_transparent = true,
+own_window_type = 'desktop',
+total_run_times = 0,
+update_interval = 1,
+uppercase = false,
+use_xft = true,
+xftalpha = 1,
 };
+
 conky.text = [[
 ${font FreeSans:Bold:size=10}BATERIA    ${hr 2}
 
@@ -86,4 +84,4 @@ ${downspeedgraph wlp3s0}
 
 ${font}Upload   | ${upspeedf wlp3s0} kb/s | Total ${totalup wlp3s0}
 ${upspeedgraph wlp3s0}$
-]]
+]];
