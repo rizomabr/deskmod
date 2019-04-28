@@ -264,7 +264,7 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 # conky
 mkdir -p ${HOME}/.conky/Default
-cp ./cfg/.conkyrc ${HOME}/.conky/Default/.conkyrc
+cp ./cfg/.conkyrc ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
 cp ./cfg/conky.desktop ${HOME}/.config/autostart/conky.desktop
 
