@@ -81,6 +81,7 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderos
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-showdesktop-button false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel stockgs-keep-dash true
+gnome-shell --replace
 
 # background / screensaver
 sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
@@ -265,7 +266,7 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 mkdir -p ${HOME}/.conky/Default
 cp ./cfg/.conkyrc ${HOME}/.conky/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
-cp ./cfg/conky-startup.sh ${HOME}/.config/autostart/conky-startup.sh
+cp ./cfg/conky.desktop ${HOME}/.config/autostart/conky.desktop
 chmod +x ${HOME}/.config/autostart/conky-startup.sh
 
 # install proprietary drivers
