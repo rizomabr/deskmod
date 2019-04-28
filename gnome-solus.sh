@@ -266,6 +266,7 @@ mkdir ${HOME}/.conky/Default
 cp ./cfg/conky-startup.sh ${HOME}/.conky/conky-startup.sh
 mkdir ${HOME}/.config/autostart/
 cp ./cfg/conky-startup.sh ${HOME}/.config/autostart/conky-startup.sh
+chmod +x ${HOME}/.config/autostart/conky-startup.sh
 
 # install proprietary drivers
 dropbox start -i
