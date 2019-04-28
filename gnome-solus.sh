@@ -261,6 +261,10 @@ gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
+# xorg gpu settings
+sudo cp ./cfg/20-nvidia.conf /usr/share/X11/xorg.conf.d/20-nvidia.conf
+sudo cp ./cfg/20-intel.conf /usr/share/X11/xorg.conf.d/20-intel.conf
+
 # install proprietary drivers
 dropbox start -i
 doflicky-ui
