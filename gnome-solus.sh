@@ -7,19 +7,19 @@ set -x
 sudo sed -i -e "s+#includedir /etc/sudoers.d+#includedir /etc/sudoers.d\n\nDefaults  env_reset,timestamp_timeout=-1+g" /etc/sudoers
 
 # upgrade
-# sudo eopkg upgrade -y
+sudo eopkg upgrade -y
 
 # remove bloatware
 sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install -y conky # deluge dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
+sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
 
 # install third-party
-# sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
-# sudo eopkg install -y skype*.eopkg;sudo rm *.eopkg
-# sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
-# sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
+sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
+sudo eopkg install -y skype*.eopkg;sudo rm *.eopkg
+sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
+sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
 # install arc-solid-gtk-theme / deskmod settings
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
@@ -263,11 +263,10 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 # conky
-mkdir -p ${HOME}/.conky/Default
 cp ./cfg/.conkyrc ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
 cp ./cfg/conky.desktop ${HOME}/.config/autostart/conky.desktop
 
 # install proprietary drivers
 dropbox start -i
-doflicky-ui
+doflicky-ui & exit
