@@ -13,7 +13,7 @@ sudo eopkg upgrade -y
 sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
 
 # install packages
-sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br paper-icon-theme steam vlc
+sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
 
 # install third-party
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
