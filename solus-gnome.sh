@@ -10,7 +10,7 @@ sudo sed -i -e "s+#includedir /etc/sudoers.d+#includedir /etc/sudoers.d\n\nDefau
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove -y eog hexchat gnome-calendar gnome-mpv thunderbird transmission
+sudo eopkg remove -y eog hexchat thunderbird transmission
 
 # install packages
 sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
@@ -30,9 +30,6 @@ sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
 
 # extensions
-wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
-chmod +x gnome-shell-extension-installer
-sudo mv gnome-shell-extension-installer /usr/bin/
 gnome-shell-extension-tool -d alternate-tab
 gnome-shell-extension-tool -d apps-menu
 gnome-shell-extension-tool -d auto-move-windows
@@ -59,28 +56,6 @@ sudo rm -rf /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shel
 sudo rm -rf /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
 sudo rm -rf /usr/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
 sudo rm -rf /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com
-gnome-shell-extension-installer 1160
-gnome-shell-extension-installer 1228
-gnome-shell-extension-tool -e dash-to-panel
-gnome-shell-extension-tool -e arc-menu
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Text'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu disable-activities-hotcorner true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-appearance 'Icon'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/arc-menu@linxgem33.com/schemas set org.gnome.shell.extensions.arc-menu menu-button-icon 'System_Icon'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-margin 0
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel appicon-padding 8
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel dot-size 0
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel focus-highlight true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel group-apps-label-font-size 13
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel location-clock 'STATUSRIGHT'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel multi-monitors false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel panel-size 32
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-activities-button false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-favorites false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-show-apps-button false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel show-showdesktop-button false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas set org.gnome.shell.extensions.dash-to-panel stockgs-keep-dash true
 gnome-shell --replace &
 
 # background / screensaver
