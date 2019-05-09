@@ -73,8 +73,8 @@ ${font FreeSans:Bold:size=10}DISCOS    ${hr 2}
 
 ${font}Root   |$font ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /} %
 ${fs_bar 10 /}${color}
-${font}Home |$font ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /} %
-${fs_bar 10 /}${color}
+${font}Home |$font ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home} %
+${fs_bar 10 /home}${color}
 
 ${font FreeSans:Bold:size=10}REDE    ${hr 2}
 
