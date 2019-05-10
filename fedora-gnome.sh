@@ -14,7 +14,7 @@ set -x
 # sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # remove bloats
-sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-weather orca
+sudo dnf remove -y cheese desktop-backgrounds-gnome gnome-boxes totem orca
 
 # remove useless gnome-shell-extensions
 sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-window-list
@@ -24,16 +24,16 @@ sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
 
 # services
-systemctl stop accounts-daemon
-systemctl disable accounts-daemon
-systemctl stop bluetooth
-systemctl disable bluetooth
-systemctl stop lvm2-monitor
-systemctl disable lvm2-monitor
-systemctl stop ModemManager
-systemctl disable ModemManager
-systemctl stop NetworkManager-wait-online
-systemctl disable NetworkManager-wait-online
+# systemctl stop accounts-daemon
+# systemctl disable accounts-daemon
+sudo systemctl stop bluetooth
+sudo systemctl disable bluetooth
+# systemctl stop lvm2-monitor
+# systemctl disable lvm2-monitor
+# systemctl stop ModemManager
+# systemctl disable ModemManager
+# systemctl stop NetworkManager-wait-online
+# systemctl disable NetworkManager-wait-online
 
 # gsettings
 gsettings set org.freedesktop.ibus.general.hotkey next-engine []
