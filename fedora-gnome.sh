@@ -3,15 +3,18 @@
 # turn output on (echo)
 set -x
 
+# update
+sudo dnf update -y
+
 # flatpak setup
-# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-# sudo flatpak install -y flathub com.discordapp.Discord com.dropbox.Client com.skype.Client com.valvesoftware.Steam org.videolan.VLC
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y flathub com.discordapp.Discord com.dropbox.Client com.skype.Client com.valvesoftware.Steam org.videolan.VLC
 
 # install packages
-# sudo dnf install -y cabextract deluge gimp gnome-tweaks libreoffice
+sudo dnf install -y arc-theme breeze-cursor-theme cabextract conky deluge gimp libreoffice paper-icon-theme
 
 # install ms-fonts
-# sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # remove bloats
 sudo dnf remove -y cheese desktop-backgrounds-gnome gnome-boxes totem orca
@@ -42,6 +45,13 @@ gsettings set org.freedesktop.ibus.general.hotkey trigger []
 gsettings set org.freedesktop.ibus.general.hotkey triggers []
 gsettings set org.freedesktop.ibus.panel.emoji hotkey []
 gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
+gsettings set org.gnome.clocks geolocation false
+gsettings set org.gnome.clocks world-clocks [{'location': <(uint32 2, <('Leite Lopes, Ribeir Airport', 'SBRP', false, [(-0.36884624277037081, -0.83397648842685956)], @a(dd) [])>)>}]
+gsettings set org.gnome.desktop.background show-desktop-icons true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface cursor-theme 'breeze_cursors'
+gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+gsettings set org.gnome.desktop.interface menubar-accel ''
 gsettings set org.gnome.FileRoller.Dialogs.New default-extension '.zip'	
 gsettings set org.gnome.FileRoller.FileSelector show-hidden true
 gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab ''
@@ -125,17 +135,14 @@ gsettings set org.gnome.desktop.wm.keybindings unmaximize []
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
 gsettings set org.gnome.desktop.wm.preferences theme 'Adwaita'
-gsettings set org.gnome.gedit.plugins active-plugins '["spell", "quickhighlight"]'
-gsettings set org.gnome.gedit.preferences.editor background-pattern 'grid'
-gsettings set org.gnome.gedit.preferences.editor bracket-matching true
+gsettings set org.gnome.gedit.plugins active-plugins []
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
-gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
-gsettings set org.gnome.gedit.preferences.editor scheme 'classic'
 gsettings set org.gnome.login-screen logo '/usr/share/pixmaps/fedora-gdm-logo.png'
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.mutter.keybindings rotate-monitor []
 gsettings set org.gnome.mutter.keybindings switch-monitor '["<Super>p"]'
-gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []		
+gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts []
+gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-10 []		
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-11 []		
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-12 []		
@@ -181,8 +188,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot ''
 gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip ''		
 gsettings set org.gnome.settings-daemon.plugins.media-keys www ''		
 gsettings set org.gnome.shell favorite-apps []		
-gsettings set org.gnome.shell.extensions.net.gfxmonk.impatience speed-factor 0.5		
-gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'		
+gsettings set org.gnome.shell.extensions.user-theme name 'Arc-Dark-solid'
 gsettings set org.gnome.shell.keybindings focus-active-notification []		
 gsettings set org.gnome.shell.keybindings open-application-menu []		
 gsettings set org.gnome.shell.keybindings toggle-application-view []		
@@ -193,8 +199,10 @@ gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
+# conky
+cp ./cfg/.conkyrc ${HOME}/.conkyrc
+mkdir -p ${HOME}/.config/autostart/
+cp ./cfg/conky.desktop ${HOME}/.config/autostart/conky.desktop
+
 # Run Dropbox
 # dropbox start -i &>/dev/null &
-
-# update repos
-# sudo dnf update -y
