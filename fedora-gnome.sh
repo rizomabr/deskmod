@@ -3,36 +3,37 @@
 # turn output on (echo)
 set -x
 
-# Extend script time as super user
-sudo sed -i -e "s/env_reset/env_reset,timestamp_timeout=-1/g" /etc/sudoers
-
-# enable rpmfusion
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$(rpm -E %fedora) /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)
-
-# install skype
-sudo dnf config-manager --add-repo https://repo.skype.com/data/skype-stable.repo
-sudo rpm --import https://repo.skype.com/data/SKYPE-GPG-KEY
-
-# update repos
-sudo dnf update -y
+# flatpak setup
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# sudo flatpak install -y flathub com.discordapp.Discord com.dropbox.Client com.skype.Client com.valvesoftware.Steam org.videolan.VLC
 
 # install packages
-sudo dnf groupinstall -y Multimedia
-sudo dnf install -y cabextract deluge discord dropbox gimp gnome-tweaks libreoffice nautilus-dropbox skypeforlinux steam
+# sudo dnf install -y cabextract deluge gimp gnome-tweaks libreoffice
 
 # install ms-fonts
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # remove bloats
 sudo dnf remove -y cheese desktop-backgrounds-gnome evolution gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-documents gnome-maps gnome-photos gnome-weather orca
 
 # remove useless gnome-shell-extensions
-sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-plances-menu gnome-shell-extension-window-list
+sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-window-list
 
 # background / screensaver
 sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
+
+# services
+systemctl stop accounts-daemon
+systemctl disable accounts-daemon
+systemctl stop bluetooth
+systemctl disable bluetooth
+systemctl stop lvm2-monitor
+systemctl disable lvm2-monitor
+systemctl stop ModemManager
+systemctl disable ModemManager
+systemctl stop NetworkManager-wait-online
+systemctl disable NetworkManager-wait-online
 
 # gsettings
 gsettings set org.freedesktop.ibus.general.hotkey next-engine []
@@ -193,4 +194,7 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 # Run Dropbox
-dropbox start -i &>/dev/null &
+# dropbox start -i &>/dev/null &
+
+# update repos
+# sudo dnf update -y
