@@ -17,7 +17,7 @@ sudo dnf install -y arc-theme breeze-cursor-theme cabextract conky deluge gimp l
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # remove bloats
-sudo dnf remove -y cheese desktop-backgrounds-gnome gnome-boxes totem orca
+sudo dnf remove -y cheese desktop-backgrounds-gnome gnome-boxes gnome-calendar gnome-clocks gnome-contacts gnome-maps gnome-photos gnome-weather totem orca
 
 # remove useless gnome-shell-extensions
 sudo dnf remove -y gnome-shell-extension-background-logo gnome-shell-extension-launch-new-instance gnome-shell-extension-places-menu gnome-shell-extension-window-list
