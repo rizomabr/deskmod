@@ -3,21 +3,16 @@
 # turn output on (echo)
 set -x
 
-# remove sudo timeout
-sudo sed -i -e "s+#includedir /etc/sudoers.d+#includedir /etc/sudoers.d\n\nDefaults  env_reset,timestamp_timeout=-1+g" /etc/sudoers
-
 # upgrade
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove -y eog hexchat thunderbird transmission
+sudo eopkg remove -y gnome-calendar gnome-photos hexchat thunderbird transmission
 
 # install packages
 sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
 
 # install third-party
-sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/im/skype/pspec.xml
-sudo eopkg install -y skype*.eopkg;sudo rm *.eopkg
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
 sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
