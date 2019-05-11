@@ -35,11 +35,19 @@ budgie-panel --reset --replace &
 # gsettings
 gsettings set com.solus-project.budgie-panel builtin-theme true
 gsettings set com.solus-project.budgie-panel layout 'solus-fortitude'
+gsettings set com.solus-project.budgie-raven show-power-strip true
 gsettings set com.solus-project.budgie-wm clear-notifications []
 gsettings set com.solus-project.budgie-wm take-region-screenshot []
 gsettings set com.solus-project.budgie-wm take-window-screenshot []
 gsettings set com.solus-project.budgie-wm toggle-notifications []
 gsettings set com.solus-project.budgie-wm toggle-raven []
+gsettings set org.freedesktop.ibus.general.hotkey next-engine []
+gsettings set org.freedesktop.ibus.general.hotkey trigger []
+gsettings set org.freedesktop.ibus.general.hotkey next-engine-in-menu []
+gsettints set org.freedesktop.ibus.general.hotkey triggers []
+gsettints set org.freedesktop.ibus.panel.emoji hotkey []
+gsettings set org.freedesktop.ibus.panel.emoji load-emoji-at-startup false
+gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.interface cursor-theme 'breeze-cursor'
