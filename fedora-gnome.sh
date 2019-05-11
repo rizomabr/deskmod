@@ -11,7 +11,7 @@ sudo dnf update -y
 
 # flatpak setup
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y flathub com.discordapp.Discord com.dropbox.Client com.skype.Client com.valvesoftware.Steam org.videolan.VLC
+sudo flatpak install -y flathub com.dropbox.Client com.skype.Client com.valvesoftware.Steam org.videolan.VLC
 
 # install packages
 sudo dnf install -y arc-theme breeze-cursor-theme cabextract conky deluge gimp libreoffice libreoffice-langpack-pt-BR paper-icon-theme
