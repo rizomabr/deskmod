@@ -4,17 +4,18 @@
 set -x
 
 # upgrade
-sudo eopkg upgrade -y
+# sudo eopkg upgrade -y
 
 # remove bloatware
 sudo eopkg remove -y gnome-calendar gnome-photos hexchat thunderbird transmission
 
 # install packages
-sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
+# sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
+sudo eopkg install -y paper-icon-theme
 
 # install third-party
-sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
-sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
+# sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
+# sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
 # install arc-solid-gtk-theme / deskmod settings
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
@@ -25,11 +26,11 @@ sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
 
 # background / screensaver
-sudo cp ./img/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
-sudo cp ./img/screensaver.png /usr/share/backgrounds/screensaver.png
+sudo wget https://github.com/rizomabr/deskmod/raw/master/img/screensaver.png -O /usr/share/backgrounds/screensaver.png
+sudo wget https://github.com/rizomabr/deskmod/raw/master/img/wallpaper.jpg -O /usr/share/backgrounds/wallpaper.jpg
 
 # budgie-panel
-sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/deskmod.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
+sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
 budgie-panel --reset --replace &
 
 # gsettings
@@ -44,8 +45,8 @@ gsettings set com.solus-project.budgie-wm toggle-raven []
 gsettings set org.freedesktop.ibus.general.hotkey next-engine []
 gsettings set org.freedesktop.ibus.general.hotkey trigger []
 gsettings set org.freedesktop.ibus.general.hotkey next-engine-in-menu []
-gsettints set org.freedesktop.ibus.general.hotkey triggers []
-gsettints set org.freedesktop.ibus.panel.emoji hotkey []
+gsettings set org.freedesktop.ibus.general.hotkey triggers []
+gsettings set org.freedesktop.ibus.panel.emoji hotkey []
 gsettings set org.freedesktop.ibus.panel.emoji load-emoji-at-startup false
 gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
@@ -102,8 +103,6 @@ gsettings set org.gnome.FileRoller.Dialogs.New default-extension '.zip'
 gsettings set org.gnome.FileRoller.FileSelector show-hidden true
 gsettings set org.gnome.gedit.plugins active-plugins []
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
-gsettings set org.gnome.login-screen enable-fingerprint-authentication false
-gsettings set org.gnome.login-screen enable-smartcard-authentication false
 gsettings set org.gnome.mutter.keybindings rotate-monitor []
 gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-1 []
@@ -181,10 +180,10 @@ gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 # conky
-cp ./cfg/.conkyrc ${HOME}/.conkyrc
+sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
-cp ./cfg/conky.desktop ${HOME}/.config/autostart/conky.desktop
+sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
 
 # install proprietary drivers
-dropbox start -i
+# dropbox start -i
 doflicky-ui & exit
