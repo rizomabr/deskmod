@@ -179,6 +179,11 @@ gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
+# budgie-panel
+wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
+dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
+rm ./budgie-panel.dconf
+
 # conky
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
