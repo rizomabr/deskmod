@@ -7,10 +7,10 @@ set -x
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat intel-microcode onboard orca thunderbird transmission
+sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat onboard orca thunderbird transmission
 
 # install packages
-sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
+sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br intel-microcode nautilus-dropbox paper-icon-theme steam vlc
 
 # install third-party
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
@@ -36,6 +36,7 @@ rm ./budgie-panel.dconf
 budgie-panel --replace &
 
 # slick-greeter
+sudo mkdir -p /etc/lightdm
 sudo wget https://github.com/rizomabr/deskmod/raw/master/cfg/slick-greeter.conf -O /etc/lightdm/slick-greeter.conf
 
 # gsettings
