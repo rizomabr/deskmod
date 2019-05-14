@@ -196,12 +196,11 @@ mkdir -p ${HOME}/.config/autostart/
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
 
 # gimp
-wget https://gitlab.com/AbdullahRagb/Gimp-Dark-Theme-v3/raw/master/GIMP-DARK-THEME-V3.tar.xz
-mkdir .temp
-tar -xf GIMP-DARK-THEME-V3.tar.xz -C .temp
-mkdir -p /home/$USER/.config/GIMP/2.10
-sudo mv -u .temp/GIMP-DARK-THEME-V3/* /home/$USER/.config/GIMP/2.10
-rm -rf .temp && rm GIMP-DARK-THEME-V3.tar.xz
+gimp &
+pkill gimp &
+wget https://github.com/rizomabr/deskmod/raw/master/photogimp_doctormo.zip
+unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
+rm photogimp_doctormo.zip
 
 # libreoffice
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
