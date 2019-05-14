@@ -199,8 +199,8 @@ sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.de
 
 # libreoffice
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
-libreoffice VeroptBRV320AOC.oxt
+libreoffice VeroptBRV320AOC.oxt &
 
 # install proprietary drivers
-# dropbox start -i
+dropbox start -i
 doflicky-ui & exit
