@@ -203,7 +203,8 @@ mkdir -p ${HOME}/.config/autostart/
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
 
 # gimp
-gimp && sleep 10
+gimp &
+sleep 5
 pkill gimp
 wget https://github.com/rizomabr/deskmod/raw/master/cfg/photogimp_doctormo.zip
 unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
@@ -211,7 +212,8 @@ rm photogimp_doctormo.zip
 
 # libreoffice
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
-libreoffice VeroptBRV320AOC.oxt
+libreoffice VeroptBRV320AOC.oxt &
+sleep 5
 rm VeroptBRV320AOC.oxt
 
 # install proprietary drivers
