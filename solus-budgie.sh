@@ -4,18 +4,17 @@
 set -x
 
 # upgrade
-# sudo eopkg upgrade -y
+sudo eopkg upgrade -y
 
 # remove bloatware
 sudo eopkg remove -y gnome-calendar gnome-photos hexchat thunderbird transmission
 
 # install packages
-# sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
-sudo eopkg install -y paper-icon-theme
+sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
 
 # install third-party
-# sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
-# sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
+sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
+sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
 # install arc-solid-gtk-theme / deskmod settings
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
@@ -118,9 +117,11 @@ gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-10 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-11 []
 gsettings set org.gnome.mutter.wayland.keybindings switch-to-session-12 []
 gsettings set org.gnome.nautilus.desktop home-icon-name 'Computador'
+gsettings set org.gnome.nautilus.desktop home-icon-visible true
 gsettings set org.gnome.nautilus.desktop network-icon-name 'Rede'
 gsettings set org.gnome.nautilus.desktop network-icon-visible true
 gsettings set org.gnome.nautilus.desktop trash-icon-name 'Lixeira'
+gsettings set org.gnome.nautilus.desktop trash-icon-visible true
 gsettings set org.gnome.nautilus.preferences click-policy 'double'
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
@@ -183,6 +184,13 @@ gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
 dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
 rm ./budgie-panel.dconf
+nohup budgie-panel --replace &
+
+# bluetooth
+sudo systemctl stop bluetooth
+sudo systemctl disable bluetooth
+
+# reduce grub time
 
 # conky
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
