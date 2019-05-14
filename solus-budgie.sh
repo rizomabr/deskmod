@@ -33,7 +33,7 @@ sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/solus.la
 wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/budgie-panel.dconf
 dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
 rm ./budgie-panel.dconf
-budgie-panel --replace &>/dev/null &
+budgie-panel --replace &
 
 # slick-greeter
 sudo mkdir -p /etc/lightdm
@@ -203,18 +203,18 @@ mkdir -p ${HOME}/.config/autostart/
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
 
 # gimp
-gimp & sleep 10 &>/dev/null &
-pkill gimp &>/dev/null &
+gimp && sleep 10
+pkill gimp
 wget https://github.com/rizomabr/deskmod/raw/master/cfg/photogimp_doctormo.zip
 unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
 rm photogimp_doctormo.zip
 
 # libreoffice
-wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt -O /home/$USER/VeroptBRV320AOC.oxt
-libreoffice VeroptBRV320AOC.oxt &
+wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
+libreoffice VeroptBRV320AOC.oxt
 rm VeroptBRV320AOC.oxt
 
 # install proprietary drivers
-dropbox start -i &>/dev/null &
-doflicky-ui &>/dev/null &
+dropbox start -i &
+doflicky-ui &
 exit
