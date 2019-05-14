@@ -20,8 +20,8 @@ sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
 mkdir .temp
 tar -xf arc-solid.tar.xz -C .temp
-sudo rm -r /usr/share/themes/Arc-Dark-solid
-sudo mv -u .temp/usr/share/themes/Arc-Dark-solid /usr/share/themes/
+sudo rm -r /usr/share/themes/Arc-Darker-solid
+sudo mv -u .temp/usr/share/themes/Arc-Darker-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
 
 # background / screensaver
@@ -51,7 +51,7 @@ gsettings set org.freedesktop.ibus.panel.emoji unicode-hotkey []
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/wallpaper.jpg'
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.interface cursor-theme 'breeze-cursor'
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark-solid'
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker-solid'
 gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 gsettings set org.gnome.desktop.interface menubar-accel ''
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/screensaver.png'
@@ -97,7 +97,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>tab"]'
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized []
 gsettings set org.gnome.desktop.wm.keybindings unmaximize []
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
-gsettings set org.gnome.desktop.wm.preferences theme 'Arc-Dark-solid'
+gsettings set org.gnome.desktop.wm.preferences theme 'Arc-Darker-solid'
 gsettings set org.gnome.FileRoller.Dialogs.New default-extension '.zip'
 gsettings set org.gnome.FileRoller.FileSelector show-hidden true
 gsettings set org.gnome.gedit.plugins active-plugins []
