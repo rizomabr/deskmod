@@ -211,6 +211,7 @@ unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
 rm photogimp_doctormo.zip
 
 # libreoffice
+mkdir -p /home/$USER/.config/libreoffice/4/user/extensions/
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt -O /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt
 libreoffice /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt &>/dev/null &
 
