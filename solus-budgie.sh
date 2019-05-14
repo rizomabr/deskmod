@@ -7,7 +7,7 @@ set -x
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat onboard orca thunderbird transmission
+sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat intel-microcode onboard orca thunderbird transmission
 
 # install packages
 sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
@@ -180,15 +180,15 @@ gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
+# bluetooth
+sudo systemctl stop bluetooth
+sudo systemctl disable bluetooth
+
 # budgie-panel
 wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
 dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
 rm ./budgie-panel.dconf
 nohup budgie-panel --replace &
-
-# bluetooth
-sudo systemctl stop bluetooth
-sudo systemctl disable bluetooth
 
 # conky
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
@@ -198,6 +198,7 @@ sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.de
 # libreoffice
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
 libreoffice VeroptBRV320AOC.oxt &
+rm VeroptBRV320AOC.oxt
 
 # install proprietary drivers
 dropbox start -i &
