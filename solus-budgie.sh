@@ -97,7 +97,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>tab"]'
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized []
 gsettings set org.gnome.desktop.wm.keybindings unmaximize []
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
-gsettings set org.gnome.desktop.wm.preferences theme 'Arc-Darker-solid'
+gsettings set org.gnome.desktop.wm.preferences theme 'Arc-Dark-solid'
 gsettings set org.gnome.FileRoller.Dialogs.New default-extension '.zip'
 gsettings set org.gnome.FileRoller.FileSelector show-hidden true
 gsettings set org.gnome.gedit.plugins active-plugins []
@@ -196,6 +196,10 @@ sudo systemctl disable bluetooth
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
+
+# libreoffice
+wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
+libreoffice VeroptBRV320AOC.oxt
 
 # install proprietary drivers
 # dropbox start -i
