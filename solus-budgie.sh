@@ -7,7 +7,7 @@ set -x
 sudo eopkg upgrade -y
 
 # remove bloatware
-sudo eopkg remove -y gnome-calendar gnome-photos hexchat thunderbird transmission
+sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat onboard orca thunderbird transmission
 
 # install packages
 sudo eopkg install -y conky deluge dropbox gimp hunspell-pt-br nautilus-dropbox paper-icon-theme steam vlc
@@ -189,8 +189,6 @@ nohup budgie-panel --replace &
 # bluetooth
 sudo systemctl stop bluetooth
 sudo systemctl disable bluetooth
-
-# reduce grub time
 
 # conky
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
