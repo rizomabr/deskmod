@@ -211,11 +211,10 @@ unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
 rm photogimp_doctormo.zip
 
 # libreoffice
-wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt
-libreoffice VeroptBRV320AOC.oxt
-rm VeroptBRV320AOC.oxt
+wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt -O /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt
+libreoffice /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt &>/dev/null &
 
 # install proprietary drivers
-dropbox start -i &
+dropbox start -i &>/dev/null &
 doflicky-ui &
 exit
