@@ -29,11 +29,14 @@ sudo wget https://github.com/rizomabr/deskmod/raw/master/img/screensaver.png -O 
 sudo wget https://github.com/rizomabr/deskmod/raw/master/img/wallpaper.jpg -O /usr/share/backgrounds/wallpaper.jpg
 
 # budgie-panel
-sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
-wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
+sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
+wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/budgie-panel.dconf
 dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
 rm ./budgie-panel.dconf
 budgie-panel --replace &
+
+# slick-greeter
+sudo wget https://github.com/rizomabr/deskmod/raw/master/cfg/slick-greeter.conf -O /etc/lightdm/slick-greeter.conf
 
 # gsettings
 gsettings set com.solus-project.budgie-panel builtin-theme true
@@ -201,7 +204,7 @@ sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.de
 # gimp
 gimp &
 pkill gimp &
-wget https://github.com/rizomabr/deskmod/raw/master/photogimp_doctormo.zip
+wget https://github.com/rizomabr/deskmod/raw/master/cfg/photogimp_doctormo.zip
 unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
 rm photogimp_doctormo.zip
 
