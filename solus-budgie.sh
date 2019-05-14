@@ -40,7 +40,6 @@ sudo mkdir -p /etc/lightdm
 sudo wget https://github.com/rizomabr/deskmod/raw/master/cfg/slick-greeter.conf -O /etc/lightdm/slick-greeter.conf
 
 # gsettings
-gsettings set com.solus-project.budgie-panel builtin-theme true
 gsettings set com.solus-project.budgie-panel layout 'solus-fortitude'
 gsettings set com.solus-project.budgie-raven show-power-strip true
 gsettings set com.solus-project.budgie-wm clear-notifications []
