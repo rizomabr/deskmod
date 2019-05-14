@@ -30,7 +30,10 @@ sudo wget https://github.com/rizomabr/deskmod/raw/master/img/wallpaper.jpg -O /u
 
 # budgie-panel
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
-budgie-panel --reset --replace &
+wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
+dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
+rm ./budgie-panel.dconf
+budgie-panel --replace &
 
 # gsettings
 gsettings set com.solus-project.budgie-panel builtin-theme true
@@ -179,16 +182,16 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/k
 gsettings set org.gtk.Settings.FileChooser date-format 'with-time'
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-
+gsettings set x.dm.slick-greeter activate-numlock true
+gsettings set x.dm.slick-greeter background '/usr/share/backgrounds/screensaver.png'
+gsettings set x.dm.slick-greeter draw-grid true
+gsettings set x.dm.slick-greeter icon-theme-name 'Paper'
+gsettings set x.dm.slick-greeter show-a11y false
+gsettings set x.dm.slick-greeter theme-name 'Arc-Darker-solid'
+ 
 # bluetooth
 sudo systemctl stop bluetooth
 sudo systemctl disable bluetooth
-
-# budgie-panel
-wget https://raw.githubusercontent.com/rizomabr/deskmod/master/budgie/budgie-panel.dconf
-dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
-rm ./budgie-panel.dconf
-budgie-panel --replace &
 
 # conky
 sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
