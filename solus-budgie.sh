@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# turn output on (echo)
+# turn output on
 set -x
 
-# upgrade
+# upgrade system
 sudo eopkg upgrade -y
 
-# remove bloatware
+# remove unwanted packages
 sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat onboard orca thunderbird transmission
 
-# install packages
-sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br intel-microcode nautilus-dropbox paper-icon-theme steam vlc
+# install additional packages
+sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br intel-microcode nautilus-dropbox paper-icon-theme playonlinux steam vlc
 
-# install third-party
+# install m$ fonts
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
 sudo eopkg install -y mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg
 
-# install arc-solid-gtk-theme / deskmod settings
+# install arc-solid-gtk-theme
 wget -O arc-solid.tar.xz https://www.archlinux.org/packages/community/any/arc-solid-gtk-theme/download/
 mkdir .temp
 tar -xf arc-solid.tar.xz -C .temp
@@ -24,22 +24,22 @@ sudo rm -r /usr/share/themes/Arc-Darker-solid
 sudo mv -u .temp/usr/share/themes/Arc-Darker-solid /usr/share/themes/
 rm -r .temp && rm arc-solid.tar.xz
 
-# background / screensaver
-sudo wget https://github.com/rizomabr/deskmod/raw/master/img/screensaver.png -O /usr/share/backgrounds/screensaver.png
-sudo wget https://github.com/rizomabr/deskmod/raw/master/img/wallpaper.jpg -O /usr/share/backgrounds/wallpaper.jpg
+# customize background and screensaver
+sudo wget https://github.com/kophe/deskmod/raw/master/img/screensaver.png -O /usr/share/backgrounds/screensaver.png
+sudo wget https://github.com/kophe/deskmod/raw/master/img/wallpaper.jpg -O /usr/share/backgrounds/wallpaper.jpg
 
-# budgie-panel
-sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
-wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/budgie-panel.dconf
+# customize budgie-panel
+sudo wget https://raw.githubusercontent.com/kophe/deskmod/master/cfg/solus.layout -O /usr/share/budgie-desktop/layouts/solus-fortitude.layout
+wget https://raw.githubusercontent.com/kophe/deskmod/master/cfg/budgie-panel.dconf
 dconf load /com/solus-project/budgie-panel/ < budgie-panel.dconf
 rm ./budgie-panel.dconf
 budgie-panel --replace &
 
-# slick-greeter
+# customize slick-greeter
 sudo mkdir -p /etc/lightdm
-sudo wget https://github.com/rizomabr/deskmod/raw/master/cfg/slick-greeter.conf -O /etc/lightdm/slick-greeter.conf
+sudo wget https://github.com/kophe/deskmod/raw/master/cfg/slick-greeter.conf -O /etc/lightdm/slick-greeter.conf
 
-# gsettings
+# customize gsettings
 gsettings set com.solus-project.budgie-panel layout 'solus-fortitude'
 gsettings set com.solus-project.budgie-raven show-power-strip true
 gsettings set com.solus-project.budgie-wm clear-notifications []
@@ -192,24 +192,24 @@ gsettings set x.dm.slick-greeter icon-theme-name 'Paper'
 gsettings set x.dm.slick-greeter show-a11y false
 gsettings set x.dm.slick-greeter theme-name 'Arc-Darker-solid'
  
-# bluetooth
-sudo systemctl stop bluetooth
-sudo systemctl disable bluetooth
+# disable bluetooth
+# sudo systemctl stop bluetooth
+# sudo systemctl disable bluetooth
 
-# conky
-sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
+# customize conky
+sudo wget https://raw.githubusercontent.com/kophe/deskmod/master/cfg/.conkyrc -O ${HOME}/.conkyrc
 mkdir -p ${HOME}/.config/autostart/
-sudo wget https://raw.githubusercontent.com/rizomabr/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
+sudo wget https://raw.githubusercontent.com/kophe/deskmod/master/cfg/conky.desktop -O ${HOME}/.config/autostart/conky.desktop
 
-# gimp
+# customize gimp
 gimp &
 sleep 10
 pkill gimp
-wget https://github.com/rizomabr/deskmod/raw/master/cfg/photogimp_doctormo.zip
+wget https://github.com/kophe/deskmod/raw/master/cfg/photogimp_doctormo.zip
 unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
 rm photogimp_doctormo.zip
 
-# libreoffice
+# install libreoffice's spellchecker for pt_BR
 mkdir -p /home/$USER/.config/libreoffice/4/user/extensions/
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/VeroptBRV320AOC.oxt -O /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt
 libreoffice /home/$USER/.config/libreoffice/4/user/extensions/VeroptBRV320AOC.oxt &>/dev/null &
