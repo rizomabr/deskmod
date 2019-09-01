@@ -10,7 +10,7 @@ sudo eopkg upgrade -y
 sudo eopkg remove -y gnome-calendar gnome-mpv gnome-photos hexchat onboard orca thunderbird transmission
 
 # install additional packages
-sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br intel-microcode nautilus-dropbox paper-icon-theme playonlinux steam vlc
+sudo eopkg install -y atom conky deluge dropbox gimp hunspell-pt-br inkscape intel-microcode nautilus-dropbox paper-icon-theme playonlinux scribus steam vlc
 
 # install m$ fonts
 sudo eopkg build -y --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml
@@ -205,9 +205,9 @@ sudo wget https://raw.githubusercontent.com/kophe/deskmod/master/cfg/conky.deskt
 gimp &
 sleep 10
 pkill gimp
-wget https://github.com/kophe/deskmod/raw/master/cfg/photogimp_doctormo.zip
-unzip -o photogimp_doctormo.zip -d /home/$USER/.config/GIMP/2.10
-rm photogimp_doctormo.zip
+wget https://github.com/kophe/deskmod/raw/master/cfg/photogimp2018_diolinux.zip
+unzip -o photogimp2018_diolinux.zip -d /home/$USER/.config/GIMP/2.10
+rm photogimp2018_diolinux.zip
 
 # install libreoffice's spellchecker for pt_BR
 mkdir -p /home/$USER/.config/libreoffice/4/user/extensions/
