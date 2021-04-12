@@ -6,7 +6,7 @@ set -x
 killall conky
 sudo apt-get purge conky-legacy-all
 
-/usr/local/lib/desltop-session/desktop-session-restart Space-IceWM
+/usr/local/lib/desktop-session/desktop-session-restart Space-IceWM
 
 sudo apt-get purge abcde
 sudo apt-get purge asunder
