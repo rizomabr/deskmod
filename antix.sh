@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# turn output on (echo)
+set -x
+
 /usr/local/lib/desltop-session/desktop-session-restart Space-IceWM
 killall conky
 sudo apt-get purge abcde
