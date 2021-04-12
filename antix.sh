@@ -3,8 +3,11 @@
 # turn output on (echo)
 set -x
 
-/usr/local/lib/desltop-session/desktop-session-restart Space-IceWM
 killall conky
+sudo apt-get purge conky-legacy-all
+
+/usr/local/lib/desltop-session/desktop-session-restart Space-IceWM
+
 sudo apt-get purge abcde
 sudo apt-get purge asunder
 sudo apt-get purge calcurse
@@ -14,7 +17,6 @@ sudo apt-get purge ceni
 sudo apt-get purge cherrytree
 sudo apt-get purge claws-mail
 sudo apt-get purge clipit
-sudo apt-get purge conky-legacy-all
 sudo apt-get purge connectshares-antix
 sudo apt-get purge dillo
 sudo apt-get purge dosbox
